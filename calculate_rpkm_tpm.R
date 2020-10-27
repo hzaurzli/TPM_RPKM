@@ -2,7 +2,7 @@ rm(list = ls())#删除目前工作目录的变量
 library(xlsx)
 library(readxl)
 ann<- read_excel("Counts.xlsx")#读取基因文件
-input<- read_excel("len.xlsx")#自己在Excel中把网盘里的txt文件基因和长度共两列提取出来
+input<- read_excel("len.xlsx")#自己在Excel中把Data里的txt文件基因和长度共两列提取出来
 library(dplyr)
 merge<-left_join(ann,input,by="Gene")#根据基因那列进行合并
 merge <- na.omit(merge)#删除错误值行
